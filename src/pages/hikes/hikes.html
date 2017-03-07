@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>hikes</ion-title>
+    <ion-title>Randonnées</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -9,8 +9,10 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let hike of hikes">
-      {{ hike.name }}
+    <button ion-item *ngFor="let hike of hikes" (click)="showHikeDetails(hike)">
+      <h2>{{ hike.name }}</h2>
+      <p>distance : {{ hike.distance }} {{ hike.distanceUnit}}</p>
+      <ion-note item-right>{{ hike.region}}</ion-note>
     </button>
   </ion-list>
 </ion-content>

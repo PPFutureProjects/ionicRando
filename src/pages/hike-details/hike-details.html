@@ -1,18 +1,34 @@
-<!--
-  Generated template for the HikeDetails page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>hike-details</ion-title>
+    <ion-title>{{ hike.name }}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
+  <ion-card>    
+    <ion-card-content>
+      <ion-card-title>
+        {{ hike.name }}
+      </ion-card-title>
+      <p> {{ hike.description }} </p>
+    </ion-card-content>
+  </ion-card>
 
+  <ion-fab center middle>
+    <button ion-fab color="primary"><ion-icon name="md-share"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab color="primary"><ion-icon name="md-map"></ion-icon></button>
+    </ion-fab-list>
+    <ion-fab-list side="bottom">
+      <button ion-fab color="secondary"><ion-icon name="md-walk"></ion-icon></button>
+    </ion-fab-list>
+    <ion-fab-list side="left">
+      <button ion-fab color="light"><ion-icon name="md-compass"></ion-icon></button>
+    </ion-fab-list>
+    <ion-fab-list side="right">
+      <button ion-fab color="dark"><ion-icon name="md-camera"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>

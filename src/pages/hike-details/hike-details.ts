@@ -1,22 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Hike } from '../../models/hike';
 
-/*
-  Generated class for the HikeDetails page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'hike-details',
   templateUrl: 'hike-details.html'
 })
-export class HikeDetailsPage {
+export class HikeDetailsPage implements OnInit {
+  hike: Hike;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HikeDetailsPage');
+  ngOnInit() {
+    this.hike = this.navParams.get('hike');
   }
+
 
 }

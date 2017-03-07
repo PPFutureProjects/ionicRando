@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Position } from './position';
 
 export interface Hike {
     id: number;
@@ -6,6 +7,7 @@ export interface Hike {
     area: string;
     region: string;
     startingPoint: string;
+    position: Position;
     distance: number;
     distanceUnit: string;
     duration: number;
@@ -14,3 +16,4 @@ export interface Hike {
     heightDifferenceUnit?: string;
     description: string;
 }
+

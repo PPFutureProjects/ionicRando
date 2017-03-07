@@ -5,6 +5,10 @@
         "region": "Bretagne",
         "area": "Ille-et-Vilaine",
         "startingPoint": "Plan d'eau",
+        "position": {
+            "lat": "48.259909",
+            "lng": "-1.396108"
+        },
         "distance": "12.8",
         "distanceUnit": "km",
         "duration": "240",
@@ -19,6 +23,10 @@
         "region": "Bretagne",
         "area": "Ille-et-Vilaine",
         "startingPoint": "Château de la ville olivier",
+        "position": {
+            "lat": "48.307286",
+            "lng": "-1.433306"
+        },
         "distance": "15.6",
         "distanceUnit": "km",
         "duration": "270",
@@ -32,6 +40,10 @@
         "region": "Rhône Alpes",
         "area": "Isère",
         "startingPoint": "étang de Fallavier",
+        "postion": {
+            "lat": "45.618760",
+            "lng": "5.129525"
+        },    
         "distance": "6",
         "distanceUnit": "km",
         "duration": "90",
@@ -46,6 +58,10 @@
         "region": "Nouvelle-Aquitaine",
         "area": "Gironde",
         "startingPoint": "Jetée Thiers",
+        "position": {
+            "lat": "44.663539",
+            "lng": "-1.168648"
+        },
         "distance": "12",
         "distanceUnit": "km",
         "duration": "240",

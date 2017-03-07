@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+
 import { HikeService } from '../../services/hike';
 import { Hike } from '../../models/hike';
+import { HikeDetailsPage } from '../hike-details/hike-details';
 
 @Component({
   selector: 'hikes',
@@ -21,6 +23,10 @@ export class HikesPage implements OnInit {
                         console.log(this.hikes);
                       }
                     )
+  }
+
+  showHikeDetails(hike: Hike) {
+    this.navCtrl.push(HikeDetailsPage, { hike: hike});
   }
 
 }
