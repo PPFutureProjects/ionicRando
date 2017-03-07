@@ -8,7 +8,7 @@ import { NavController, NavParams } from 'ionic-angular';
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-hike-current',
+  selector: 'hike-current',
   templateUrl: 'hike-current.html'
 })
 export class HikeCurrentPage {

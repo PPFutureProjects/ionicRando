@@ -8,7 +8,7 @@ import { NavController, NavParams } from 'ionic-angular';
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-hike-details',
+  selector: 'hike-details',
   templateUrl: 'hike-details.html'
 })
 export class HikeDetailsPage {
