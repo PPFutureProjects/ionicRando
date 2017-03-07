@@ -29,6 +29,18 @@
             required></ion-textarea>
         </ion-item>  
         <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col width-40>
+                <button type="button" ion-button block (click)="saveCoords()">ajouter coords GPS</button>
+              </ion-col>
+              <ion-col width-40>
+                <button type="button" ion-button block (click)="takePicture()">prendre une photo</button>
+              </ion-col>              
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+        <ion-item>
           <button
             ion-button
             color="secondary"

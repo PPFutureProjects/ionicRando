@@ -1,4 +1,3 @@
-import { Injectable } from '@angular/core';
 import { Position } from './position';
 
 export interface Hike {
