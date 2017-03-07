@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ModalController } from 'ionic-angular';
+
 import { Hike } from '../../models/hike';
+import {HikeCurrentPage } from '../hike-current/hike-current';
 
 @Component({
   selector: 'hike-details',
@@ -10,7 +12,7 @@ export class HikeDetailsPage implements OnInit {
   hike: Hike;
   isPositionVisible: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController) {}
 
   ngOnInit() {
     this.hike = this.navParams.get('hike');
@@ -18,6 +20,14 @@ export class HikeDetailsPage implements OnInit {
 
   showPosition() {
     this.isPositionVisible = !this.isPositionVisible;
+  }
+
+  addCommentary(hike: Hike) {    
+    const modal = this.modalCtrl.create(HikeCurrentPage, { hike: hike, time: Date.now() });
+    modal.present();
+    modal.onDidDismiss((data) => {
+      console.log('recu depuis modal',data);
+    })
   }
 
 

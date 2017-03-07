@@ -1,22 +1,37 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 
-/*
-  Generated class for the HikeCurrent page.
+import { Hike } from '../../models/hike';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'hike-current',
   templateUrl: 'hike-current.html'
 })
-export class HikeCurrentPage {
+export class HikeCurrentPage implements OnInit {
+  hike: Hike;
+  time: number;
+  leg = {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  difficulties = [
+    { text: 'très facile', value: 'veasy' },
+    { text: 'facile', value: 'easy' },
+    { text: 'difficile', value: 'hard' },
+    { text: 'très difficile', value: 'vhard' },
+    { text: 'impossible', value: 'impossible' },
+  ];
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HikeCurrentPage');
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {}
+
+  ngOnInit() {
+    this.hike = this.navParams.get('hike');
+    this.time = this.navParams.get('time');
   }
+
+  addCommentary(formValue) {
+    console.log(formValue);
+    this.viewCtrl.dismiss({ leg: formValue});    
+  }
+  
 
 }

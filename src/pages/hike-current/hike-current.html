@@ -7,12 +7,43 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>hike-current</ion-title>
+    <ion-title> {{ hike.name }} en cours</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <h2>Journal d'étape</h2>
+  <form (ngSubmit)="addCommentary(f.value)" #f="ngForm">  
+    <ion-list>  
+        <ion-item>
+          <ion-label fixed>Date</ion-label>
+          <ion-datetime [(ngModel)]="leg.date" name="date" required></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Difficulté</ion-label>
+          <ion-select [(ngModel)]="leg.difficulty" name="difficulty" required>
+            <ion-option *ngFor="let diff of difficulties" value="diff.value">{{ diff.text }}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Remarques</ion-label>
+          <ion-textarea
+            name="notice"
+            [(ngModel)]="leg.remark"
+            required></ion-textarea>
+        </ion-item>  
+        <ion-item>
+          <button
+            ion-button
+            color="secondary"
+            block
+            type="submit"
+            [disabled]="f.invalid">
+            ajouter
+          </button>  
+        </ion-item>  
+    </ion-list>
+  </form>
 </ion-content>
