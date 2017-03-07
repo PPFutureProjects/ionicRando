@@ -49,5 +49,14 @@
     </ion-fab-list>
   </ion-fab>
 
+  <ion-grid *ngIf="legs.length > 0">
+    <ion-row *ngFor="let leg of legs; let i = index;">
+      <ion-col>
+        <h2>Etape {{ i + 1}}</h2>
+        {{leg.remark}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 
 </ion-content>

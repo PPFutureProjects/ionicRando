@@ -1,9 +1,3 @@
-<!--
-  Generated template for the HikeCurrent page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -19,18 +13,18 @@
     <ion-list>  
         <ion-item>
           <ion-label fixed>Date</ion-label>
-          <ion-datetime [(ngModel)]="leg.date" name="date" required></ion-datetime>
+          <ion-datetime [(ngModel)]="leg.date" displayFormat="DD MMM, HH:mm" name="date" required></ion-datetime>
         </ion-item>
         <ion-item>
           <ion-label stacked>Difficulté</ion-label>
           <ion-select [(ngModel)]="leg.difficulty" name="difficulty" required>
-            <ion-option *ngFor="let diff of difficulties" value="diff.value">{{ diff.text }}</ion-option>
+            <ion-option *ngFor="let diff of difficulties" value="{{diff.text}}">{{ diff.text }}</ion-option>
           </ion-select>
         </ion-item>
         <ion-item>
           <ion-label floating>Remarques</ion-label>
           <ion-textarea
-            name="notice"
+            name="remark"
             [(ngModel)]="leg.remark"
             required></ion-textarea>
         </ion-item>  

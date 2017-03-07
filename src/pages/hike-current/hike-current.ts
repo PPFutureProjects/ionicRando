@@ -9,12 +9,18 @@ import { Hike } from '../../models/hike';
 })
 export class HikeCurrentPage implements OnInit {
   hike: Hike;
-  time: number;
-  leg = {};
+  time: number = -1;
+  leg = {
+    date: this.time,
+    difficulty: '',
+    remark: '',
+    hikeId: -1
+  };
 
   difficulties = [
     { text: 'très facile', value: 'veasy' },
     { text: 'facile', value: 'easy' },
+    { text: 'moyenne', value: 'average' },
     { text: 'difficile', value: 'hard' },
     { text: 'très difficile', value: 'vhard' },
     { text: 'impossible', value: 'impossible' },
@@ -26,11 +32,19 @@ export class HikeCurrentPage implements OnInit {
   ngOnInit() {
     this.hike = this.navParams.get('hike');
     this.time = this.navParams.get('time');
+    this.leg.date = this.time;
+    this.leg.hikeId = this.hike.id;
   }
 
   addCommentary(formValue) {
     console.log(formValue);
-    this.viewCtrl.dismiss({ leg: formValue});    
+    this.viewCtrl
+        .dismiss({ 
+                    date: formValue.date, 
+                    difficulty: formValue.difficulty, 
+                    remark: formValue.remark, 
+                    hikeId: this.hike.id  
+                  });    
   }
   
 
