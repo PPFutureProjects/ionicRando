@@ -8,11 +8,16 @@ import { Hike } from '../../models/hike';
 })
 export class HikeDetailsPage implements OnInit {
   hike: Hike;
+  isPositionVisible: boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ngOnInit() {
     this.hike = this.navParams.get('hike');
+  }
+
+  showPosition() {
+    this.isPositionVisible = !this.isPositionVisible;
   }
 
 

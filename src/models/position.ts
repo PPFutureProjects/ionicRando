@@ -1,4 +1,4 @@
 export interface Position {
-    lat: string,
-    lng: string
+    lat: number,
+    lng: number
 }
