@@ -1,7 +1,13 @@
 <ion-header>
 
   <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="createHike()">
+        <ion-icon name="add"></ion-icon>
+    </button>
+    </ion-buttons>
     <ion-title>Randonnées</ion-title>
+
   </ion-navbar>
 
 </ion-header>
@@ -11,8 +17,8 @@
   <ion-list>
     <button ion-item *ngFor="let hike of hikes" (click)="showHikeDetails(hike)">
       <h2>{{ hike.name }}</h2>
-      <p>distance : {{ hike.distance }} {{ hike.distanceUnit}}</p>
-      <ion-note item-right>{{ hike.region}}</ion-note>
+      <p>distance : {{ hike.distance }} {{ hike.distanceUnit }}</p>
+      <ion-note item-right>{{ hike.region }}</ion-note>
     </button>
   </ion-list>
 </ion-content>

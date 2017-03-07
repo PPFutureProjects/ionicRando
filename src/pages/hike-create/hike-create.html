@@ -1,0 +1,61 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title> {{ hike.name }} en cours</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2>Nouvelle rando</h2>
+  <form (ngSubmit)="addHike(f.value)" #f="ngForm">  
+    <ion-list>  
+        <ion-item>
+          <ion-label color="primary" stacked>Nom</ion-label>
+          <ion-input type="text" name="name" [(ngModel)]="hike.name" placeholder="nom de la rando"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" stacked>département</ion-label>
+          <ion-input type="text" name="area"  [(ngModel)]="hike.area"   placeholder="département"></ion-input>
+        </ion-item>
+         <ion-item>
+          <ion-label color="primary" stacked>région</ion-label>
+          <ion-input type="text" name="region" ngModel  placeholder="région"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" stacked>point de départ</ion-label>
+          <ion-input type="text" name="startingPoint" ngModel  placeholder="lac, parking du château..."></ion-input>
+        </ion-item>
+         <ion-item ngModelGroup="position">
+          <ion-label color="primary" stacked>latitude</ion-label>
+          <ion-input type="number" name="lat" [(ngModel)]="lat" placeholder="latitude"></ion-input>
+          <ion-label color="primary" stacked>longitude</ion-label>
+          <ion-input type="number" name="lng" [(ngModel)]="lng" placeholder="longitude"></ion-input>
+        </ion-item>
+         <ion-item>
+          <ion-label color="primary" stacked>distance</ion-label>
+          <ion-input type="number" name="distance" ngModel placeholder="distance"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" stacked>déclivité</ion-label>
+          <ion-input type="number" name="heightDifference" ngModel placeholder="déclivité"></ion-input>
+        </ion-item>
+         <ion-item>
+          <ion-label color="primary" stacked>description</ion-label>
+          <ion-textarea name="description" ngModel></ion-textarea>zzz
+        </ion-item>
+        <ion-item>
+          <button
+            ion-button
+            color="secondary"
+            block
+            type="submit"
+            [disabled]="f.invalid">
+            créer
+          </button>  
+        </ion-item>  
+    </ion-list>
+  </form>
+</ion-content>
+

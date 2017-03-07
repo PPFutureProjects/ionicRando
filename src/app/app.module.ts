@@ -8,6 +8,7 @@ import { HikeDetailsPage } from '../pages/hike-details/hike-details';
 import { HikeCurrentPage } from '../pages/hike-current/hike-current';
 import { HikeService } from '../services/hike';
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { HikeCreatePage } from '../pages/hike-create/hike-create';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     HomePage,
     HikesPage,
     HikeDetailsPage,
-    HikeCurrentPage
+    HikeCurrentPage,
+    HikeCreatePage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -29,7 +31,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
     HomePage,
     HikesPage,
     HikeDetailsPage,
-    HikeCurrentPage
+    HikeCurrentPage,
+    HikeCreatePage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
