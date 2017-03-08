@@ -90,6 +90,7 @@ export class HikeService {
 
     createHike( hike: Hike) {
         let hikesFromStorage = this.retrieveFromStorage('hikes');
+        hike.id = hikesFromStorage.length;
         let allHikes = [...hikesFromStorage, hike];
         console.log('allHikes createHike: ', allHikes);
         localStorage.setItem('hikes', JSON.stringify(allHikes));
@@ -97,13 +98,16 @@ export class HikeService {
 
     getLegs(hikeId: number) {
         let legsFromStorage = this.retrieveFromStorage('legs');
-        return legsFromStorage.filter(leg => leg.hikeId === hikeId);
+        const legs = legsFromStorage.filter(leg => leg.hikeId === hikeId);
+        console.log('getLegs service:', legs);
+        return legs;
     }
 
     addLeg(leg) {
         let legsFromStorage = this.retrieveFromStorage('legs');
         this.legs = [...legsFromStorage, leg];
-        localStorage.setItem('legs', JSON.stringify(legsFromStorage));
+        console.log('addLeg service:', this.legs);
+        localStorage.setItem('legs', JSON.stringify(this.legs));
     }
 
 

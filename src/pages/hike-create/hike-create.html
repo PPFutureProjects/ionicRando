@@ -21,29 +21,31 @@
         </ion-item>
          <ion-item>
           <ion-label color="primary" stacked>région</ion-label>
-          <ion-input type="text" name="region" ngModel  placeholder="région"></ion-input>
+          <ion-input type="text" name="region" [(ngModel)]="hike.region"  placeholder="région"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label color="primary" stacked>point de départ</ion-label>
-          <ion-input type="text" name="startingPoint" ngModel  placeholder="lac, parking du château..."></ion-input>
+          <ion-input type="text" name="startingPoint" [(ngModel)]="hike.startingPoint"  placeholder="lac, parking du château..."></ion-input>
         </ion-item>
-         <ion-item ngModelGroup="position">
-          <ion-label color="primary" stacked>latitude</ion-label>
-          <ion-input type="number" name="lat" [(ngModel)]="lat" placeholder="latitude"></ion-input>
-          <ion-label color="primary" stacked>longitude</ion-label>
-          <ion-input type="number" name="lng" [(ngModel)]="lng" placeholder="longitude"></ion-input>
-        </ion-item>
-         <ion-item>
-          <ion-label color="primary" stacked>distance</ion-label>
-          <ion-input type="number" name="distance" ngModel placeholder="distance"></ion-input>
+        <ion-item ngModelGroup="position"> position
+          <ion-input type="text" name="lat" [(ngModel)]="lat" placeholder="latitude"></ion-input>
+          <ion-input type="text" name="lng" [(ngModel)]="lng" placeholder="longitude"></ion-input>           
         </ion-item>
         <ion-item>
-          <ion-label color="primary" stacked>déclivité</ion-label>
-          <ion-input type="number" name="heightDifference" ngModel placeholder="déclivité"></ion-input>
+          <ion-label color="primary" stacked>distance (en km)</ion-label>
+          <ion-input type="number" name="distance" [(ngModel)]="hike.distance" placeholder="distance"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" stacked>durée (en minutes)</ion-label>
+          <ion-input type="number" name="duration" [(ngModel)]="hike.duration" placeholder="durée"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" stacked>déclivité (en mètres)</ion-label>
+          <ion-input type="number" name="heightDifference" [(ngModel)]="hike.heightDifference" placeholder="déclivité"></ion-input>
         </ion-item>
          <ion-item>
           <ion-label color="primary" stacked>description</ion-label>
-          <ion-textarea name="description" ngModel></ion-textarea>zzz
+          <ion-textarea name="description" [(ngModel)]="hike.description"></ion-textarea>
         </ion-item>
         <ion-item>
           <button

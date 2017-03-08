@@ -3,6 +3,7 @@ import { NavController, NavParams, ViewController, ToastController } from 'ionic
 import { Geolocation } from 'ionic-native';
 
 import { Hike } from '../../models/hike';
+import { HikeService } from '../../services/hike';
 
 @Component({
   selector: 'hike-current',
@@ -30,8 +31,8 @@ export class HikeCurrentPage implements OnInit {
   ];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, 
-                public viewCtrl: ViewController, private toastCtrl:ToastController) {}
+  constructor(private navCtrl: NavController, private navParams: NavParams, private hikeService: HikeService, 
+                private viewCtrl: ViewController, private toastCtrl:ToastController) {}
 
   ngOnInit() {
     this.hike = this.navParams.get('hike');
@@ -41,7 +42,9 @@ export class HikeCurrentPage implements OnInit {
   }
 
   addCommentary(formValue) {
-    console.log(formValue);
+    console.log('addCommentary: ', formValue);
+    this.hikeService.addLeg(formValue);
+    this.hikeService
     this.viewCtrl
         .dismiss({ 
                     date: formValue.date, 

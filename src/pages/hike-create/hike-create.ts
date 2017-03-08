@@ -32,9 +32,18 @@ export class HikeCreatePage {
   };
   }
 
+  // addHike(formValue) {
+  //   console.log('addHike:', formValue );
+  //   this.hikeService.createHike(formValue);
+  //   this.viewCtrl.dismiss();
+  // }
+
+
   addHike(formValue) {
     console.log('addHike:', formValue );
-    this.hikeService.createHike(formValue);
+    this.hike.position.lat = parseFloat(formValue.position.lat);
+    this.hike.position.lng = parseFloat(formValue.position.lng);
+    this.hikeService.createHike(this.hike);
     this.viewCtrl.dismiss();
   }
 

@@ -19,6 +19,7 @@ export class HikeDetailsPage implements OnInit {
 
   ngOnInit() {
     this.hike = this.navParams.get('hike');
+    console.log('will retrieve legs from ', this.hike);
     this.legs = this.hikeService.getLegs(this.hike.id);
     console.log('ngOnInit legs:', this.legs);
     console.log('ngOnInit hike:', this.hike);
